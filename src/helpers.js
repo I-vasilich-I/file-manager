@@ -25,6 +25,15 @@ const getComandProps = (command) => command.split(/\s/g).slice(1);
 
 const getPathToGo = (command) => getComandProps(command)[0];
 
+const isPathExist = async (path) => {
+  try {
+    await access(path);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 export {
   getUserName,
   getHomeDir,
@@ -35,4 +44,5 @@ export {
   getComandProps,
   getCurrentDir,
   getPathToGo,
+  isPathExist,
 }
