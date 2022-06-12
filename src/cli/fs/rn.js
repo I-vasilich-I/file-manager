@@ -4,8 +4,8 @@ import { currentDirMessage, getCurrentDir, isPathExist } from '../../helpers.js'
 export const rn = async ([oldName, newName]) => {
   try {
     await rename(oldName, newName);
-  } catch (error) {
-    console.error(error);
+  } catch {
+    console.log('Operation failed')
   } finally {
     currentDirMessage(getCurrentDir());
   }

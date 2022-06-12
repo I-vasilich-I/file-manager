@@ -19,7 +19,7 @@ export const os = ([ arg ]) => {
       console.log(arch());
       break;
     default:
-      console.log('Invalid input');
+      console.log('Operation failed');
       break;
   }
   

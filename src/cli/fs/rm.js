@@ -4,8 +4,8 @@ import { currentDirMessage, getCurrentDir } from '../../helpers.js';
 export const rm = async ([ filePath ]) => {
   try {
     await unlink(filePath);
-  } catch (error) {
-    console.error(error);
+  } catch {
+    console.log('Operation failed')
   } finally {
     currentDirMessage(getCurrentDir());
   }

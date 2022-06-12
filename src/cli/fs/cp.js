@@ -5,8 +5,8 @@ export const cp = async ([ fileName, folderPath ], silent = false) => {
   try {
     await copyFile(fileName, `${folderPath}/${fileName}`);
     return true;
-  } catch (error) {
-    console.error(error);
+  } catch {
+    console.log('Operation failed')
     return false;
   } finally {
     if (!silent) {

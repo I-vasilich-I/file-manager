@@ -29,8 +29,6 @@ const start = async () => {
   welcomeMessage(userName);
   
   cd(getHomeDir());
-
-  currentDirMessage(getCurrentDir());
   
   process.stdin.on('data', (data) => {
     const command = getCommand(data);
@@ -42,19 +40,16 @@ const start = async () => {
     // nwd
     if (command === 'up') {
       up(getCurrentDir());
-      currentDirMessage(getCurrentDir());
       return;
     }
 
     if (command ==='ls') {
       ls(getCurrentDir());
-      currentDirMessage(getCurrentDir());
       return;
     }
 
     if (command.startsWith('cd')) {
       cd(getPathToGo(command));
-      currentDirMessage(getCurrentDir());
       return;
     }
 

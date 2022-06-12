@@ -13,7 +13,7 @@ export const hash = async ([ filePath ]) => {
   
     console.log(hex);
   } catch {
-    console.log('Invalid input');
+    console.log('Operation failed');
   } finally {
     currentDirMessage(getCurrentDir());
   }

@@ -1,7 +1,11 @@
+import { currentDirMessage, getCurrentDir } from '../../helpers.js';
+
 export const cd = (path) => {
   try {
     process.chdir(path);
-  } catch (error) {
-    console.error(error)
+  } catch {
+    console.log('Operation failed');
+  } finally {
+    currentDirMessage(getCurrentDir());
   }
 }
