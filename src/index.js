@@ -20,6 +20,8 @@ import { rm } from './cli/fs/rm.js';
 import { rn } from './cli/fs/rn.js';
 import { os } from './cli/os/os.js';
 import { hash } from './cli/hash/hash.js';
+import { compress } from './cli/zlib/compress.js';
+import { decompress } from './cli/zlib/decompres.js';
 
 
 const start = async () => {
@@ -41,52 +43,79 @@ const start = async () => {
     if (command === 'up') {
       up(getCurrentDir());
       currentDirMessage(getCurrentDir());
+      return;
     }
 
     if (command ==='ls') {
       ls(getCurrentDir());
       currentDirMessage(getCurrentDir());
+      return;
     }
 
     if (command.startsWith('cd')) {
       cd(getPathToGo(command));
       currentDirMessage(getCurrentDir());
+      return;
     }
 
     // fs
     if (command.startsWith('cat')) {
       cat(getPathToGo(command))
+      return;
     }
 
     if (command.startsWith('add')) {
       add(getPathToGo(command))
+      return;
     }
 
     if (command.startsWith('rn')) {
       rn(getComandProps(command))
+      return;
     }
 
     if (command.startsWith('cp')) {
       cp(getComandProps(command))
+      return;
     }
 
     if (command.startsWith('rm')) {
       rm(getComandProps(command))
+      return;
     }
 
     if (command.startsWith('mv')) {
       mv(getComandProps(command))
+      return;
     }
 
     // os
     if (command.startsWith('os')) {
       os(getComandProps(command))
+      return;
     }
 
     // hash
     if (command.startsWith('hash')) {
       hash(getComandProps(command))
+      return;
     }
+
+    // zlib
+    if (command.startsWith('compress')) {
+      compress(getComandProps(command))
+      return;
+    }
+
+    if (command.startsWith('decompress')) {
+      decompress(getComandProps(command))
+      return;
+    }
+
+
+    console.log("Invalid input");
+    currentDirMessage(getCurrentDir())
+
   });
 
   process.on('SIGINT', () => {
