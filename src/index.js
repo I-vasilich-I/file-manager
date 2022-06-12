@@ -18,6 +18,7 @@ import { cp } from './cli/fs/cp.js';
 import { mv } from './cli/fs/mv.js';
 import { rm } from './cli/fs/rm.js';
 import { rn } from './cli/fs/rn.js';
+import { os } from './cli/os/os.js';
 
 
 const start = async () => {
@@ -74,6 +75,11 @@ const start = async () => {
 
     if (command.startsWith('mv')) {
       mv(getComandProps(command))
+    }
+
+    // os
+    if (command.startsWith('os')) {
+      os(getComandProps(command))
     }
   });
 
