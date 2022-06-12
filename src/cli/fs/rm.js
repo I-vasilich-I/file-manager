@@ -1,5 +1,5 @@
 import { unlink } from 'fs/promises';
-import { currentDirMessage, getCurrentDir } from '../helpers.js';
+import { currentDirMessage, getCurrentDir } from '../../helpers.js';
 
 export const rm = async ([ filePath ]) => {
   try {

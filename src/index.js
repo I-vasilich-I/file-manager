@@ -8,16 +8,16 @@ import {
   welcomeMessage,
   currentDirMessage 
 } from './helpers.js';
-import { add } from './cli/add.js';
-import { cat } from './cli/cat.js';
-import { cd } from './cli/cd.js';
-import { cp } from './cli/cp.js';
-import { exit } from './cli/exit.js';
-import { ls } from './cli/ls.js';
-import { mv } from './cli/mv.js';
-import { up } from './cli/up.js';
-import { rm } from './cli/rm.js';
-import { rn } from './cli/rn.js';
+import { cd } from './cli/base/cd.js';
+import { exit } from './cli/base/exit.js';
+import { ls } from './cli/base/ls.js';
+import { up } from './cli/base/up.js';
+import { add } from './cli/fs/add.js';
+import { cat } from './cli/fs/cat.js';
+import { cp } from './cli/fs/cp.js';
+import { mv } from './cli/fs/mv.js';
+import { rm } from './cli/fs/rm.js';
+import { rn } from './cli/fs/rn.js';
 
 
 const start = async () => {

@@ -1,4 +1,4 @@
-import { getRootDir } from '../helpers.js';
+import { getRootDir } from '../../helpers.js';
 import { cd } from './cd.js';
 
 export const up = (currentDir) => {

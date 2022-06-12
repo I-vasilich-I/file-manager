@@ -1,5 +1,5 @@
 import { open } from 'fs/promises';
-import { currentDirMessage, getCurrentDir } from '../helpers.js';
+import { currentDirMessage, getCurrentDir } from '../../helpers.js';
 
 export const add = async (fileName) => {
   try {
